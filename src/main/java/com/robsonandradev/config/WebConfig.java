@@ -28,7 +28,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
   public InternalResourceViewResolver resolver() {
     InternalResourceViewResolver resolver = new InternalResourceViewResolver();
     resolver.setPrefix("/css/*");
-    resolver.setPrefix("/images/*");
+    resolver.setPrefix("/css/*");
     resolver.setSuffix(".css");
     return resolver;
   }
