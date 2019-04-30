@@ -1,6 +1,6 @@
-package com.ensat.services;
+package com.robsonandradev.services;
 
-import com.ensat.entities.Product;
+import com.robsonandradev.entities.Product;
 
 public interface ProductService {
 

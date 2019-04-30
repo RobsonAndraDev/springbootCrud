@@ -1,7 +1,7 @@
-package com.ensat.services;
+package com.robsonandradev.services;
 
-import com.ensat.entities.Product;
-import com.ensat.repositories.ProductRepository;
+import com.robsonandradev.entities.Product;
+import com.robsonandradev.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

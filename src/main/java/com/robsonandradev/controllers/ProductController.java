@@ -1,7 +1,7 @@
-package com.ensat.controllers;
+package com.robsonandradev.controllers;
 
-import com.ensat.entities.Product;
-import com.ensat.services.ProductService;
+import com.robsonandradev.entities.Product;
+import com.robsonandradev.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

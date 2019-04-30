@@ -1,4 +1,4 @@
-package com.ensat.entities;
+package com.robsonandradev.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
