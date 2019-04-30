@@ -1,6 +1,6 @@
 package com.robsonandradev.config;
 
-import com.robsonandradev.hendlers.HendlerInterceptor;
+import com.robsonandradev.handlers.HandlerInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -17,10 +17,10 @@ public class WebConfig extends WebMvcConfigurerAdapter {
   @Override
   public void addInterceptors(InterceptorRegistry registry) {
     // Register guest interceptor with single path pattern
-    registry.addInterceptor(new HendlerInterceptor()).addPathPatterns("/**");
+    registry.addInterceptor(new HandlerInterceptor()).addPathPatterns("/**");
 
     // Register admin interceptor with multiple path patterns
-    registry.addInterceptor(new HendlerInterceptor())
+    registry.addInterceptor(new HandlerInterceptor())
         .addPathPatterns(new String[] { "/admin", "/admin/*" });
   }
 

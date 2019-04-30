@@ -1,4 +1,4 @@
-package com.robsonandradev.hendlers;
+package com.robsonandradev.handlers;
 
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
@@ -6,14 +6,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-public class HendlerInterceptor extends HandlerInterceptorAdapter {
+public class HandlerInterceptor extends HandlerInterceptorAdapter {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object controller)
       throws Exception {
 
       String uri = request.getRequestURI();
-      if(uri.endsWith("login") || uri.endsWith("images") || uri.contains("css")){
+      System.out.println(uri);
+      System.out.println(uri.endsWith("login"));
+
+        if(uri.endsWith("login") || uri.contains("static") || uri.endsWith("error") || uri.endsWith("doLogin")){
         return true;
       }
 

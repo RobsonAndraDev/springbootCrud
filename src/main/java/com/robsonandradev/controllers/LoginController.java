@@ -1,29 +1,39 @@
 package com.robsonandradev.controllers;
 import com.robsonandradev.entities.User;
-import com.robsonandradev.repositories.dao.UserRepositoryImp;
+import com.robsonandradev.services.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 
 @Controller
 public class LoginController {
 
+  private UserService userService;
+
+  @Autowired
+  public void setUserService(UserService userService) {
+    this.userService = userService;
+  }
+
   @RequestMapping("/login")
+  public  String login(User user, HttpSession session) {
+    return "login";
+  }
+
+  @RequestMapping("/doLogin")
   public String doLogin(User user, HttpSession session) {
 
-    if ( new UserRepositoryImp().userExists(user.getLogin(), user.getPassword()).isEmpty()) {
-      return "login";
+    List<User> users = userService.userExists(user.getLogin(), user.getPassword());
+    System.out.println(users.get(0).getLogin());
+    if ( users == null || users.isEmpty()) {
+      return "redirect:login";
     } else {
       session.setAttribute("loggedUser", user);
       return "index";
     }
-//    if (new UserRepository().userExists(user)) {
-//      session.setAttribute("loggedUser", user);
-//      return "index";
-//    } else {
-//      return "login";
-//    }
   }
 }
