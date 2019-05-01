@@ -28,7 +28,7 @@ public class LoginController {
   public String doLogin(User user, HttpSession session) {
 
     List<User> users = userService.userExists(user.getLogin(), user.getPassword());
-    System.out.println(users.get(0).getLogin());
+    System.out.println(users);
     if ( users == null || users.isEmpty()) {
       return "redirect:login";
     } else {
