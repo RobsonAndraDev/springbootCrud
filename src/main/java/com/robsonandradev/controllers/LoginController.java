@@ -3,6 +3,7 @@ import com.robsonandradev.entities.User;
 import com.robsonandradev.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
@@ -20,7 +21,8 @@ public class LoginController {
   }
 
   @RequestMapping("/login")
-  public  String login(User user, HttpSession session) {
+  public  String login(Model model, HttpSession session) {
+    model.addAttribute("user", new User());
     return "login";
   }
 
@@ -33,7 +35,7 @@ public class LoginController {
       return "redirect:login";
     } else {
       session.setAttribute("loggedUser", user);
-      return "index";
+      return "redirect:/";
     }
   }
 }

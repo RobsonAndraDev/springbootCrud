@@ -17,7 +17,6 @@ public class HandlerInterceptor extends HandlerInterceptorAdapter {
       System.out.println(uri.endsWith("login"));
 
       if(uri.endsWith("/login") || uri.endsWith("/error") || uri.endsWith("/doLogin")){
-        response.sendRedirect("/");
         return true;
       }
 

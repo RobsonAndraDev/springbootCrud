@@ -9,9 +9,6 @@ import java.util.List;
 
 public interface UserRepository extends CrudRepository<User, Integer> {
 
-  @Query(
-    value = "SELECT * FROM user WHERE login = :username AND password = :password", nativeQuery = true
-//    , countQuery = "SELECT COUNT(1) FROM user WHERE login = :username AND password = :password"
-  )
+  @Query(value = "SELECT * FROM user WHERE login = :username AND password = :password", nativeQuery = true)
   List<User> userExists(@Param("username") String login, @Param("password") String password);
 }

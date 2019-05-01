@@ -10,7 +10,6 @@
 <div class="container">
     <h2>Acesso ao Sistema</h2>
     <div id="login">
-        <!--/*@thymesVar id="user" type="com.robsonandradev.entities.User"*/-->
         <form class="form-horizontal" th:object="${user}" th:action="@{/doLogin}" method="post">
             <div class="form-group">
                 <label class="col-sm-2 control-label">Usename:</label>
