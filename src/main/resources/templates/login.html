@@ -8,6 +8,27 @@
 </head>
 <body>
 <div class="container">
+    <div>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#" th:href="@{/}">Home</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="jumbotron">
+            <div class="row text-center">
+                <div class="">
+                    <h2>CRUD Usando Spring Boot</h2>
+                </div>
+            </div>
+            <div class="row text-center">
+                <img src="../../static/images/boot.png" width="200" th:src="@{/images/boot.png}"/>
+            </div>
+        </div>
+
+    </div>
     <h2>Acesso ao Sistema</h2>
     <div id="login">
         <form class="form-horizontal" th:object="${user}" th:action="@{/doLogin}" method="post">
