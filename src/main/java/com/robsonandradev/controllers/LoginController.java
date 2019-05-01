@@ -32,7 +32,7 @@ public class LoginController {
     List<User> users = userService.userExists(user.getLogin(), user.getPassword());
     System.out.println(users);
     if ( users == null || users.isEmpty()) {
-      return "redirect:login";
+      return "redirect:/login";
     } else {
       session.setAttribute("loggedUser", user);
       return "redirect:/";
