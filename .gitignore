@@ -2,3 +2,4 @@
 !.*ignore
 !.classpath
 target
+out/*

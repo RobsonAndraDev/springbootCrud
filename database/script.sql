@@ -48,4 +48,14 @@ CREATE TABLE `product` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+DROP TABLE IF EXISTS `user`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `user` (
+  `id` INT NOT NULL,
+  `login` VARCHAR(255),
+  `password` VARCHAR(255)
+);
+INSERT INTO `user` VALUES('1', 'admin', '123456');
+
 -- Dump completed on 2016-11-06 20:27:53
